@@ -18,7 +18,7 @@ Player::~Player() {
 }
 
 void Player::Update(float deltaTime, const Uint8* keyboardState) {
-    float startSpeed = this->lua["PlayerConfig"]["speed"];
+    float startSpeed = (*lua)["PlayerConfig"]["speed"];
 
     float screenWidth = 800.0f;
     float screenHeight = 600.0f;
@@ -33,11 +33,11 @@ void Player::Update(float deltaTime, const Uint8* keyboardState) {
     bool left = keyboardState[SDL_SCANCODE_LEFT];
     bool right = keyboardState[SDL_SCANCODE_RIGHT];
 
-    //sol::tie(this->x, this->y) = this->lua["update_player"](
-    //    this->x, this->y, startSpeed, dt,
-    //    up, down, left, right,
-    //    screenWidth, screenHeight
-    //);
+    sol::tie(this->x, this->y) = (*lua)["update_player"](
+        this->x, this->y, startSpeed, deltaTime,
+        up, down, left, right,
+        screenWidth, screenHeight
+    );
 }
 
 void Player::Render(SDL_Renderer* renderer) {

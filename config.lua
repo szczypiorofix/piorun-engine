@@ -1,7 +1,7 @@
 -- config.lua
 
 PlayerConfig = {
-    speed = 200.0,
+    speed = 500.0,
     start_x = 100.0,
     start_y = 100.0,
 	name = "Piorun"
