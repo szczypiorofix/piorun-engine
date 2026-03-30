@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.15)
-project(My2DEngine VERSION 1.0)
+project(PiorunEngine VERSION 1.0)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
@@ -64,7 +64,7 @@ add_library(lua STATIC ${LUA_SRC})
 target_include_directories(lua PUBLIC "${lua_sources_SOURCE_DIR}/src")
 
 # --- KONFIGURACJA NASZEJ GRY ---
-add_executable(${PROJECT_NAME} main.cpp Player.cpp AssetManager.cpp)
+add_executable(${PROJECT_NAME} src/main.cpp src/Player.cpp src/AssetManager.cpp)
 
 # Podpinamy now¹ bibliotekê (NOWE)
 target_link_libraries(${PROJECT_NAME} PRIVATE SDL2::SDL2main SDL2::SDL2 SDL2_image::SDL2_image lua sol2)

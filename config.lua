@@ -3,7 +3,8 @@
 PlayerConfig = {
     speed = 200.0,
     start_x = 100.0,
-    start_y = 100.0
+    start_y = 100.0,
+	name = "Piorun"
 }
 
 -- Dodane argumenty: screen_w i screen_h

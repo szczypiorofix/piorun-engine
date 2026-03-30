@@ -28,10 +28,9 @@ int main(int argc, char* argv[]) {
     //// 4. CZYTANIE Z LUA DO C++
     //// Sol2 automatycznie obsługuje stos! Sięgamy po tablicę PlayerConfig i wyciągamy wartości:
     float startSpeed = lua["PlayerConfig"]["speed"];
-    //int startSize = lua["PlayerConfig"]["size"];
-    //std::string playerName = lua["PlayerConfig"]["name"];
+    std::string playerName = lua["PlayerConfig"]["name"];
 
-    //std::cout << "Odczytano z Lua! Zaczynamy gre jako: " << playerName << " z predkoscia " << startSpeed << std::endl;
+    std::cout << "Odczytano z Lua! Zaczynamy gre jako: " << playerName << " z predkoscia " << startSpeed << std::endl;
 
     if (SDL_Init(SDL_INIT_VIDEO) != 0) return 1;
     if (!(IMG_Init(IMG_INIT_PNG) & IMG_INIT_PNG)) return 1;
