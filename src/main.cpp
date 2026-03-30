@@ -46,7 +46,7 @@ int main(int argc, char* argv[]) {
     SDL_Texture* playerTex = assetManager.GetTexture("player.png");
 
     // --- 3. TWORZYMY GRACZA PRZEKAZUJĄC MU TEKSTURĘ ---
-    Player player(playerTex, WINDOW_WIDTH / 2.0f - 32.0f, WINDOW_HEIGHT / 2.0f - 32.0f);
+    Player player(playerTex, WINDOW_WIDTH / 2.0f - 32.0f, WINDOW_HEIGHT / 2.0f - 32.0f, &lua);
 
     Uint64 lastTime = SDL_GetTicks64();
     bool isRunning = true;
