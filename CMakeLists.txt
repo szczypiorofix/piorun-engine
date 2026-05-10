@@ -54,7 +54,13 @@ list(REMOVE_ITEM LUA_SRC "${lua_sources_SOURCE_DIR}/src/lua.c" "${lua_sources_SO
 add_library(lua STATIC ${LUA_SRC})
 target_include_directories(lua PUBLIC "${lua_sources_SOURCE_DIR}/src")
 
-add_executable(${PROJECT_NAME} src/main.cpp src/Player.cpp src/AssetManager.cpp)
+add_executable(${PROJECT_NAME}
+    src/main.cpp
+    src/Player.cpp
+    src/Player.h
+    src/AssetManager.cpp 
+    src/AssetManager.h
+)
 
 target_link_libraries(${PROJECT_NAME} PRIVATE SDL2::SDL2main SDL2::SDL2 SDL2_image::SDL2_image lua sol2)
 

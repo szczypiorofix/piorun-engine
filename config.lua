@@ -26,8 +26,8 @@ function update_player(x, y, speed, dt, up, down, left, right, screen_w, screen_
     local new_x = x + (dx * speed * dt)
     local new_y = y + (dy * speed * dt)
 
-    -- Rozmiar gracza (np. 50 pikseli), żeby nie uciekał za ekran prawym i dolnym bokiem
-    local player_size = 50 
+    -- Rozmiar gracza (np. 64 piksele), żeby nie uciekał za ekran prawym i dolnym bokiem
+    local player_size = 64 
 
     -- Kolizje z krawędziami ekranu (zakładamy punkt 0,0 w lewym górnym rogu)
     if new_x < 0 then new_x = 0 end
